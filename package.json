@@ -1,0 +1,24 @@
+{
+  "name": "@bryter/root",
+  "version": "0.0.1",
+  "description": "BRYTER apollo demo",
+  "main": "index.js",
+  "author": "Zsolt Molnar",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "build:gateway": "lerna run build --scope \"@bryter-graphql/*\" --stream",
+    "start:gateway": "lerna run start --scope \"@bryter-graphql/*\" --stream",
+    "start:gateway:dev": "lerna run start:dev --scope \"@bryter-graphql/*\" --stream",
+    "start:gateway:debug": "lerna run start:debug --scope \"@bryter-graphql/*\" --stream",
+    "start:gateway:prod": "lerna run start:prod --scope \"@bryter-graphql/*\" --stream"
+  },
+  "workspaces": {
+    "packages": [
+      "apps/*/*"
+    ]
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}

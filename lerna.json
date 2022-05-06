@@ -1,0 +1,10 @@
+{
+  "packages": [
+    "apps/*/*"
+  ],
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "stream": true,
+  "concurrency": 3
+}
