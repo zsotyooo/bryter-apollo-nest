@@ -17,7 +17,6 @@ export class UserResolver {
     __typename: string;
     id: string;
   }): Promise<User | null> {
-    console.log('resolve user ref');
     return this.userService.findById(reference.id);
   }
 }

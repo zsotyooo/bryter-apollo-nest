@@ -2,8 +2,6 @@ import { Injectable, Scope } from '@nestjs/common';
 import { Application } from './model/application.model';
 @Injectable({ scope: Scope.REQUEST })
 export class ApplicationService {
-  rand = Math.random();
-
   private applications: Application[] = [
     {
       id: 'app-1',
@@ -33,7 +31,6 @@ export class ApplicationService {
   ];
 
   getAll() {
-    console.log(this.rand);
     return this.applications;
   }
 

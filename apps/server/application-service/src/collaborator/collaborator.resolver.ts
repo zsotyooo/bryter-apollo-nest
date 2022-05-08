@@ -12,7 +12,6 @@ export class CollaboratorResolver {
     __typename: string;
     id: string;
   }): Promise<ApplicationCollaboratorGroup | null> {
-    console.log('resolve user ref');
     return this.collaboratorService.findById(reference.id) as any;
   }
 }

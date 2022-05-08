@@ -5,8 +5,6 @@ import { User } from './model/user.model';
 
 @Injectable({ scope: Scope.REQUEST })
 export class UserService {
-  rand = Math.random();
-
   private users: User[] = [
     {
       id: 'user-1',
@@ -32,7 +30,6 @@ export class UserService {
   ];
 
   private dataLoader = new DataLoader<string, User>(async (ids) => {
-    console.log('IDS', ids);
     const result = await this.getBatch([...ids]);
     return ids.map((id) => result.find((user) => user.id === id) ?? null);
   });
