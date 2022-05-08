@@ -1,0 +1,15 @@
+fragment ApplicationListFragment on Application {
+  id
+  name
+  updatedAt
+  collaborators {
+    ...UserFragment
+    ...on ApplicationCollaboratorGroup {
+      id
+      name
+      members{
+        ...UserFragment
+      }
+    }
+  }
+}

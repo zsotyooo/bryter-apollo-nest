@@ -1,6 +1,8 @@
 # compiled output
 dist
+dist-ssr
 node_modules
+*.local
 
 # Logs
 logs
@@ -17,6 +19,8 @@ lerna-debug.log*
 # Tests
 coverage
 .nyc_output
+/cypress/videos/
+/cypress/screenshots/
 
 # IDEs and editors
 /.idea

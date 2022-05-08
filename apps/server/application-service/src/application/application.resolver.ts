@@ -9,20 +9,25 @@ export class ApplicationResolver {
   constructor(private applicationService: ApplicationService) {}
 
   @Query((returns) => ApplicationQueryResult)
-  applications(): ApplicationQueryResult {
+  async applications(): Promise<ApplicationQueryResult> {
     return {
-      entries: this.applicationService.getAll(),
+      entries: await this.applicationService.getAll(),
       pageInfo: { page: 1, totalPages: 1, totalElements: 3 },
     };
   }
 
   @Query((returns) => Application)
-  application(@Args({ name: 'id', type: () => ID }) id: string): Application {
+  application(
+    @Args({ name: 'id', type: () => ID }) id: string,
+  ): Promise<Application> {
     return this.applicationService.findById(id);
   }
 
   @ResolveReference()
-  resolveReference(reference: { __typename: number; id: string }) {
+  resolveReference(reference: {
+    __typename: number;
+    id: string;
+  }): Promise<Application> {
     return this.applicationService.findById(reference.id);
   }
 }

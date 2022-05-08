@@ -30,11 +30,12 @@ export class ApplicationService {
     },
   ];
 
-  getAll() {
+  async getAll() {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
     return this.applications;
   }
 
-  findById(id: string) {
+  async findById(id: string) {
     return this.applications.find((app) => app.id === id) ?? null;
   }
 }

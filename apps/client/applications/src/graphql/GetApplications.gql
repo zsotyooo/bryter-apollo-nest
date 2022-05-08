@@ -1,0 +1,7 @@
+query GetApplications {
+	applications{
+		entries{
+			...ApplicationListFragment
+		}
+	}
+}
