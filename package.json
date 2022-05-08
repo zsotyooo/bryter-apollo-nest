@@ -11,14 +11,17 @@
     "start:gateway": "lerna run start --scope \"@bryter-graphql/*\" --stream",
     "start:gateway:dev": "lerna run start:dev --scope \"@bryter-graphql/*\" --stream",
     "start:gateway:debug": "lerna run start:debug --scope \"@bryter-graphql/*\" --stream",
-    "start:gateway:prod": "lerna run start:prod --scope \"@bryter-graphql/*\" --stream"
+    "start:gateway:prod": "lerna run start:prod --scope \"@bryter-graphql/*\" --stream",
+    "lint": "lerna run lint"
   },
   "workspaces": {
     "packages": [
       "apps/*/*"
-    ]
+    ],
+    "nohoist": ["@nestjs/**", "**/@nestjs/**", "graphql", "@apollo/**", "**/@apollo/**", "ts-morph"]
   },
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "lerna": "^4.0.0",
+    "typescript": "^4.3.5"
   }
 }

@@ -5,13 +5,11 @@ import {
 } from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
-import { ApplicationModule } from './application/application.module';
-import { CollaboratorModule } from './collaborator/collaborator.module';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
-    ApplicationModule,
-    CollaboratorModule,
+    UserModule,
     GraphQLModule.forRoot<ApolloFederationDriverConfig>({
       driver: ApolloFederationDriver,
       playground: true,
