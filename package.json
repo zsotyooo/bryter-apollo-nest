@@ -21,9 +21,9 @@
     "start:graphql-gateway:gateway:debug": "yarn workspace @bryter-graphql/gateway start:gateway:debug",
     "start:graphql-gateway:gateway:prod": "yarn workspace @bryter-graphql/gateway start:gateway:prod",
     "start:graphql-gateway": "run-p start:graphql-gateway:applications start:graphql-gateway:users start:graphql-gateway:gateway -n",
-    "start:graphql-gateway:dev": "run-p start:applications:dev start:users:dev start:gateway:dev",
-    "start:graphql-gateway:debug": "run-p start:applications:debug start:users:debug start:gateway:debug",
-    "start:graphql-gateway:prod": "run-p start:applications:prod start:users:prod start:gateway:prod",
+    "start:graphql-gateway:dev": "run-p start:graphql-gateway:applications:dev start:graphql-gateway:users:dev start:graphql-gateway:gateway:dev",
+    "start:graphql-gateway:debug": "run-p start:graphql-gateway:applications:debug start:graphql-gateway:users:debug start:graphql-gateway:gateway:debug",
+    "start:graphql-gateway:prod": "run-p start:graphql-gateway:applications:prod start:graphql-gateway:users:prod start:graphql-gateway:gateway:prod",
     "build:client": "lerna run build --scope \"@bryter-client/*\" --stream",
     "start:client:dev": "lerna run start:dev --scope \"@bryter-client/*\" --stream",
     "lint": "lerna run lint"
