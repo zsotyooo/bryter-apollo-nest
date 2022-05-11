@@ -7,11 +7,23 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "build:gateway": "lerna run build --scope \"@bryter-graphql/*\" --stream",
-    "start:gateway": "lerna run start --scope \"@bryter-graphql/*\" --stream",
-    "start:gateway:dev": "lerna run start:dev --scope \"@bryter-graphql/*\" --stream",
-    "start:gateway:debug": "lerna run start:debug --scope \"@bryter-graphql/*\" --stream",
-    "start:gateway:prod": "lerna run start:prod --scope \"@bryter-graphql/*\" --stream",
+    "build:graphql-gateway": "yarn workspace @bryter-graphql/gateway run build",
+    "start:graphql-gateway:applications": "yarn workspace @bryter-graphql/gateway start:applications",
+    "start:graphql-gateway:applications:dev": "yarn workspace @bryter-graphql/gateway start:applications:dev",
+    "start:graphql-gateway:applications:debug": "yarn workspace @bryter-graphql/gateway start:applications:debug",
+    "start:graphql-gateway:applications:prod": "yarn workspace @bryter-graphql/gateway start:applications:prod",
+    "start:graphql-gateway:users": "yarn workspace @bryter-graphql/gateway start:users",
+    "start:graphql-gateway:users:dev": "yarn workspace @bryter-graphql/gateway start:users:dev",
+    "start:graphql-gateway:users:debug": "yarn workspace @bryter-graphql/gateway start:users:debug",
+    "start:graphql-gateway:users:prod": "yarn workspace @bryter-graphql/gateway start:users:prod",
+    "start:graphql-gateway:gateway": "yarn workspace @bryter-graphql/gateway start:gateway",
+    "start:graphql-gateway:gateway:dev": "yarn workspace @bryter-graphql/gateway start:gateway:dev",
+    "start:graphql-gateway:gateway:debug": "yarn workspace @bryter-graphql/gateway start:gateway:debug",
+    "start:graphql-gateway:gateway:prod": "yarn workspace @bryter-graphql/gateway start:gateway:prod",
+    "start:graphql-gateway": "run-p start:graphql-gateway:applications start:graphql-gateway:users start:graphql-gateway:gateway -n",
+    "start:graphql-gateway:dev": "run-p start:applications:dev start:users:dev start:gateway:dev",
+    "start:graphql-gateway:debug": "run-p start:applications:debug start:users:debug start:gateway:debug",
+    "start:graphql-gateway:prod": "run-p start:applications:prod start:users:prod start:gateway:prod",
     "build:client": "lerna run build --scope \"@bryter-client/*\" --stream",
     "start:client:dev": "lerna run start:dev --scope \"@bryter-client/*\" --stream",
     "lint": "lerna run lint"
@@ -28,11 +40,13 @@
       "**/@apollo/**",
       "ts-morph",
       "@graphql-codegen/**",
-      "**/@graphql-codegen/**"
+      "**/@graphql-codegen/**",
+      "webpack"
     ]
   },
   "devDependencies": {
     "lerna": "^4.0.0",
+    "npm-run-all": "^4.1.5",
     "typescript": "^4.3.5"
   }
 }
