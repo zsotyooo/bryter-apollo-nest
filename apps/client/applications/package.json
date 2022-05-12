@@ -4,8 +4,8 @@
   "scripts": {
     "build": "vue-tsc --noEmit && vite build",
     "generate:graphql": "graphql-codegen",
-    "start:dev": "vite --port 8080",
-    "start:preview": "vite preview --port 5050",
+    "start:client:dev": "vite --port 8080",
+    "start:client:preview": "vite preview --port 5050",
     "test:unit": "vitest --environment jsdom",
     "test:e2e": "start-server-and-test preview http://127.0.0.1:5050/ 'cypress open'",
     "test:e2e:ci": "start-server-and-test preview http://127.0.0.1:5050/ 'cypress run'",

@@ -1,0 +1,15 @@
+{
+  "name": "@bryter-frontend/applications",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "start:frontend": "rimraf public/** && cp -R ../../client/applications/dist ./public && yarn http-server ./public --port 8081"
+  },
+  "dependencies": {
+    "http-server": "^14.1.0",
+    "rimraf": "3.0.2"
+  }
+}
